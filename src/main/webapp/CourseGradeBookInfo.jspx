@@ -1,0 +1,46 @@
+<jsp:root xmlns:jsp="http://java.sun.com/JSP/Page"
+          xmlns="http://www.w3.org/1999/xhtml" version="2.0"
+          xmlns:c="http://java.sun.com/jsp/jstl/core"
+          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+          xsi:schemaLocation="http://java.sun.com/JSP/Page http://java.sun.com/jsp/jstl/core">
+    <jsp:directive.page contentType="text/html; charset=UTF-8"/>
+    <html>
+    <head><title>Student Marks</title></head>
+    <body>
+    <br/>
+
+    <h1 align='center'>${course.name}</h1>
+
+    <h2 align='center'>Students Marks</h2>
+    <br/>
+    <br/>
+    <br/>
+
+    <div>
+        <c:choose>
+        <c:when test="${not empty phases}">
+            <table align="center" border="1">
+                <tr>
+                    <th>#</th>
+                    <th>Student</th>
+                    <c:forEach var="phase" items="${phases}">
+                        <th>Phase ${phase}</th>
+                    </c:forEach>
+                </tr>
+                <c:forEach var="gradeBookEntity" items="${gradeBookEntities}">
+                    <tr>
+                        <td>${gradeBookEntity.position}</td>
+                        <td>${gradeBookEntity.student.name}</td>
+                        <c:forEach var="mark" items="${gradeBookEntity.marks}">
+                            <td>${mark}</td>
+                        </c:forEach>
+                    </tr>
+                </c:forEach>
+            </table>
+        </c:when>
+        <c:otherwise><h2 align="center">There is no course plan for ${course.name}</h2></c:otherwise>
+    </c:choose>
+    </div>
+    </body>
+    </html>
+</jsp:root>

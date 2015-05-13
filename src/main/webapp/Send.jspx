@@ -1,0 +1,201 @@
+<jsp:root xmlns:jsp="http://java.sun.com/JSP/Page"
+          xmlns="http://www.w3.org/1999/xhtml" version="2.0"
+          xmlns:c="http://java.sun.com/jsp/jstl/core"
+          xmlns:fmt="http://java.sun.com/jsp/jstl/fmt"
+          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+          xsi:schemaLocation="http://java.sun.com/JSP/Page http://java.sun.com/jsp/jstl/core">
+    <jsp:directive.page contentType="text/html; charset=UTF-8"/>
+<html>
+<head>
+    <link type="text/css" charset="UTF-8" href="css/courseList.css" rel="stylesheet"/>
+    <title>Course Management System</title>
+    <link href="favicon.ico" rel="shortcut icon" type="image/vnd.microsoft.icon"/>
+
+    <link rel="stylesheet" type="text/css" href="css/template.css" charset="UTF-8"/>
+    <link rel="stylesheet" type="text/css" href="css/menu.css" charset="UTF-8"/>
+    <link rel="stylesheet" type="text/css" href="css/neon.css" charset="UTF-8"/>
+
+    <script type="text/javascript" src="js/jquery.js"><jsp:text /></script>
+    <script type="text/javascript" src="js/jquery-ui.js"><jsp:text /></script>
+    <script type="text/javascript" src="js/jquery-tooltip.js"><jsp:text /></script>
+    <script type="text/javascript" src="js/imghover.js"><jsp:text /></script>
+    <script type="text/javascript" src="js/tooltip.js"><jsp:text /></script>
+    <script type="text/javascript" src="js/slidemenu.js"><jsp:text /></script>
+</head>
+
+<body class="body">
+
+<div class="wrapper">
+    <table border="0" cellpadding="0" cellspacing="0" width="100%">
+        <tbody>
+        <tr>
+            <td class="bg-top-left"></td>
+            <td class="bg-top"></td>
+            <td class="bg-top-right"></td>
+        </tr>
+        <tr>
+            <td class="bg-left"></td>
+            <td>
+                <div class="content_all">
+                    <div class="content_all_right">
+                        <div class="logo-block-click"></div>
+
+                        <div class="logo-block logo-other">
+                            <div class="top-menu tother">
+                                <a href="http://localhost:8080/CourseManagementSystem-1.0/index">
+                                    <img class="title menu_item" src="images/bu_raspisanie.png" border="0" height="55px" width="70px" title="Расписание занятий"/>
+                                </a>
+                                <a href="http://localhost:8080/CourseManagementSystem-1.0/index">
+                                    <img class="title menu_item" src="images/bu_contact.png" border="0" height="55px" width="60px" title="Контакты"/>
+                                </a>
+                                <a href="http://localhost:8080/CourseManagementSystem-1.0/index">
+                                    <img class="title menu_item" src="images/bu_vopros.png" border="0" height="55px" width="80px" title="Задать вопрос"/>
+                                </a>
+                                <a class="bag" href="http://localhost:8080/CourseManagementSystem-1.0/send">
+                                    <img id="img_bag" class="title menu_item" src="images/bu_zajavka.png" border="0" height="55px" width="95px" title="Оформить заявку на обучение"/>
+                                </a>
+                                <div class="ajax">
+                                    <img src="images/ajax2.gif" border="0"/>
+                                </div>
+                            </div>
+
+                            <div class="other_left">
+                                <div class="menu_other jqueryslidemenu" id="myslidemenu">
+                                    <ul>
+                                        <li class="top"></li>
+                                        <li class="selected"><a title="Перейти в раздел «Home»" href="http://localhost:8080/CourseManagementSystem-1.0/index">Home</a></li>
+                                        <li>
+                                            <a title="Перейти в раздел «About the institute»" href="http://localhost:8080/CourseManagementSystem-1.0/index">About the institute</a>
+                                            <ul style="left: 220px; display: none; visibility: visible;">
+                                                <li class="top top2"></li>
+                                                <li><div class="d"><a title="Перейти в подраздел «Виды обучения»" href="http://localhost:8080/CourseManagementSystem-1.0/index">Виды обучения</a></div></li>
+                                                <li><div class="d"><a title="Перейти в подраздел «Контакты»" href="http://localhost:8080/CourseManagementSystem-1.0/index">Контакты</a></div></li>
+                                                <li><div class="d"><a title="Перейти в подраздел «Подготовка дипломного проекта»" href="http://localhost:8080/CourseManagementSystem-1.0/index">Подготовка дипломного проекта</a></div></li>
+                                                <li><div class="d"><a title="Перейти в подраздел «Порядок поступления»" href="http://localhost:8080/CourseManagementSystem-1.0/index">Порядок поступления</a></div></li>
+                                                <li class="bottom bottom2"></li>
+                                            </ul>
+                                        </li>
+
+                                        <li>
+                                            <a title="Перейти в раздел «List of Courses»" href="http://localhost:8080/CourseManagementSystem-1.0/courses">List of Courses</a>
+                                            <ul style="left: 220px; display: none; visibility: visible;">
+                                                <li class="top top2"></li>
+                                                <li><div class="d"><a title="Перейти в подраздел «Programming Methodology»" href="http://localhost:8080/CourseManagementSystem-1.0/courseInfo?id=1">Programming Methodology</a></div></li>
+                                                <li><div class="d"><a title="Перейти в подраздел «Programming Abstractions»" href="http://localhost:8080/CourseManagementSystem-1.0/courseInfo?id=2">Programming Abstractions</a></div></li>
+                                                <li><div class="d"><a title="Перейти в подраздел «Programming Paradigms»" href="http://localhost:8080/CourseManagementSystem-1.0/courseInfo?id=3">Programming Paradigms</a></div></li>
+                                                <li><div class="d"><a title="Перейти в подраздел «Natural Language Processing»" href="http://localhost:8080/CourseManagementSystem-1.0/courseInfo?id=4">Natural Language Processing</a></div></li>
+                                                <li><div class="d"><a title="Перейти в подраздел «Machine Learning»" href="http://localhost:8080/CourseManagementSystem-1.0/courseInfo?id=5">Machine Learning </a></div></li>
+                                                <li class="bottom bottom2"></li>
+                                            </ul>
+                                        </li>
+                                        <li>
+                                            <a>Students</a>
+                                            <ul style="left: 220px; display: none; visibility: visible;">
+                                                <li class="top top2"></li>
+                                                <li><div class="d"><a title="Для 1-курса" href="http://localhost:8080/CourseManagementSystem-1.0/students?courseId=1">1-й курс</a></div></li>
+                                                <li><div class="d"><a title="Для 1-курса" href="http://localhost:8080/CourseManagementSystem-1.0/students?courseId=2">2-й курс</a></div></li>
+                                                <li><div class="d"><a title="Для 1-курса" href="http://localhost:8080/CourseManagementSystem-1.0/students?courseId=3">3-й курс</a></div></li>
+                                                <li><div class="d"><a title="Для 1-курса" href="http://localhost:8080/CourseManagementSystem-1.0/students?courseId=4">4-й курс</a></div></li>
+                                                <li><div class="d"><a title="Для 1-курса" href="http://localhost:8080/CourseManagementSystem-1.0/students?courseId=5">5-й курс</a></div></li>
+                                                <li class="bottom bottom2"></li>
+                                            </ul>
+                                        </li>
+                                        <li>
+                                            <a title="Перейти в раздел «LogIn»" href="http://localhost:8080/CourseManagementSystem-1.0/admin/login">Registration requests</a>
+                                            <ul style="left: 220px; display: none; visibility: visible;">
+                                                <li class="top top2"></li>
+                                                <li><div class="d"><a title="Для 1-курса" href="http://localhost:8080/CourseManagementSystem-1.0/admin/regreq?courseId=1">1-й курс</a></div></li>
+                                                <li><div class="d"><a title="Для 1-курса" href="http://localhost:8080/CourseManagementSystem-1.0/admin/regreq?courseId=2">2-й курс</a></div></li>
+                                                <li class="bottom bottom2"></li>
+                                            </ul>
+                                        </li>
+                                        <li class="bottom"></li>
+                                    </ul>
+                                </div>
+                            </div>
+
+                            <div class="other_content">
+                                <table border="0" cellpadding="0" cellspacing="0" width="100%">
+                                    <tbody>
+                                    <tr>
+                                        <td class="bg-content-top-left"></td>
+                                        <td class="bg-content-top"></td>
+                                        <td class="bg-content-top-right"></td>
+                                    </tr>
+                                    <tr>
+                                        <td class="bg-content-left"></td>
+                                        <td class="bg-content">
+                                            <h1>­Оформление заявки на обучение</h1>
+                                            <form enctype="multipart/form-data" id="FoxForm" name="FoxForm" class="foxform" method="post" action="http://localhost:8080/CourseManagementSystem-1.0/admin/login">
+                                                <div style="clear:both;"><label style="float:left;width:200px !important;">ФИО <b>*</b></label><input class="foxtext" title="ФИО" style="width:270px !important;" name="_76c34bd41a381eeb851a3fd597f485d1" type="text" /></div>
+                                                <div class="move"><b>У вас пока нет заявок</b></div>
+                                                <div style="clear:both;"><label style="float:left;width:200px !important;">Город <b>*</b></label><input class="foxtext" title="Город" style="width:270px !important;" name="_a2f9d98f198511367d5e12ab7a3031f7" type="text" /></div>
+                                                <div style="clear:both;"><label style="float:left;width:200px !important;">Образование <b>*</b></label><input class="foxtext" title="Образование" style="width:270px !important;" name="_e194cc1cb4119d10f72baf10218da71b" type="text" /></div>
+                                                <div style="clear:both;"><label style="float:left;width:200px !important;">Ваш e-mail <b>*</b></label><input class="foxtext" title="Ваш e-mail" style="width:270px !important;" name="_4d79368407028847c870654fc20375a7" type="text" /></div>
+                                                <div style="clear:both;"><label style="float:left;width:200px !important;">Телефон</label><input class="foxtext" title="Телефон" style="width:270px !important;" name="_e067ad407cd4af664196ad8dbad81780" type="text" /></div>
+                                                <div><label style="float:left;width:200px !important;">Дополнительно</label></div>
+                                                <div style="clear:both;">
+                                                    <label style="float:left;width:200px !important;">Для предотвращения автоматических рассылок, пожалуйста, ответьте на вопрос каптчи (captcha)</label>
+                                                    <div class="fcaptchacontainer" style="float:left;">
+                                                        <div class="fcaptchafieldcontainer"><img src="images/captcha-drawer.jpg" class="fox_captcha_img" alt="captcha" id="fcaptcha_cid_229" height="75" width="150" /></div>
+                                                        <div class="fcaptchafieldcontainer"><img src="images/reload-16.png" id="reloadbtn_cid_229" alt="Перезагрузить" title="Перезагрузить изображение" onclick="javascript:ReloadFCaptcha('fcaptcha_cid_229')" /></div>
+                                                        <div class="fcaptchainputcontainer"><input class="foxtext" name="fcaptcha" style="width:150px !important;" type="text"/></div>
+                                                    </div>
+                                                </div>
+                                                <br style="clear:both;" />
+
+                                                <div style="clear:both;">
+                                                    <button class="foxbutton" type="submit" style="float:left; margin-right:32px;" name="cid_229">
+                                                        <span style="background: url(images/paper-plane.png) no-repeat scroll left top transparent; padding-left:20px;">Отправить</span>
+                                                    </button>
+                                                </div>
+                                                <div style="clear: both; padding: 10px 0px ! important; text-indent: 0px ! important; float: right; display: none;">
+                                                    <a style="font-size:10px !important;display:inline !important;font-variant:small-caps !important;visibility:visible !important;text-decoration:none !important;font-family:arial,verdana,sans-serif !important" href="http://www.fox.ra.it/" title="Joomla contact form" target="_blank">po wered by fox contact</a>
+                                                </div>
+                                            </form>
+                                            <script type="text/javascript">
+                                                HideCheckboxes();
+                                                InitializeDropdowns();
+                                            </script>
+                                        </td>
+                                        <td class="bg-content-right">
+                                            <div class="bg-min-height"></div>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td class="bg-content-bottom-left"></td>
+                                        <td class="bg-content-bottom"></td>
+                                        <td class="bg-content-bottom-right"></td>
+                                    </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+
+                            <div class="clear"></div>
+                        </div>
+
+                        <div class="clear"></div>
+                    </div>
+                </div>
+            </td>
+            <td class="bg-right"></td>
+        </tr>
+        <tr>
+            <td class="bg-bottom-left"></td>
+            <td class="bg-bottom"></td>
+            <td class="bg-bottom-right"></td>
+        </tr>
+        </tbody>
+    </table>
+
+    <center>
+        <div class="copy">
+            © Система управления курсами, 2011 - 2012. Все права защищены.
+            <br />тел. (044) 596 02 58 Copyright - Sintez-Technologies.com.ua <a href="mailto:ido@tusur.ru">office@sintez-technologies.com.ua</a>
+        </div>
+    </center>
+</div>
+
+</body>
+</html>
+</jsp:root>

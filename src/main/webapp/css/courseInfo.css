@@ -1,0 +1,33 @@
+a {
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+    color: red;
+}
+
+h3 {
+    letter-spacing: 0.1em;
+}
+
+ul {
+    list-style-type: circle;
+    list-style-image: none;
+    list-style-position: outside;
+}
+
+table.lecturers {
+    font-size:smaller;
+}
+
+td.outer {
+    border: 1px dotted silver;
+}
+
+img.photo {
+    padding:2px;
+    border-width: 1px 2px 2px 1px;
+    background-color:white;
+}
+

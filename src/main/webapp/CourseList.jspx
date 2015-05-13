@@ -1,0 +1,45 @@
+<jsp:root xmlns:jsp="http://java.sun.com/JSP/Page"
+          xmlns="http://www.w3.org/1999/xhtml" version="2.0"
+          xmlns:c="http://java.sun.com/jsp/jstl/core"
+          xmlns:fmt="http://java.sun.com/jsp/jstl/fmt"
+          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+          xsi:schemaLocation="http://java.sun.com/JSP/Page http://java.sun.com/jsp/jstl/core">
+    <jsp:directive.page contentType="text/html; charset=UTF-8"/>
+    <html>
+    <head>
+        <title>List of Courses</title>
+        <link type="text/css" charset="UTF-8" href="css/courseList.css" rel="stylesheet"/>
+    </head>
+    <body>
+    <div class="container">
+        <h1 align="center">List of Courses</h1>
+        <c:choose>
+            <c:when test="${not empty rows}">
+                <c:forEach var="row" items="${rows}">
+                    <div class="row">
+                        <c:forEach var="course" items="${row}">
+
+                            <div class="cell">
+                                <a href='courseInfo?id=${course.id}'>
+                                    <img class="cellImg" alt="" title="show more info" src="${course.imageURL}"/>
+                                </a>
+
+                                <div class="cellCharacteristics decoratedText">
+                                    <div class="courseDateBegin" title="Begin Date"><fmt:formatDate value="${course.dateBegin}" type="date"
+                                                                                 pattern="dd.MM.yy"/></div>
+                                    <div class="courseName" title="Course Name">${course.name}</div>
+
+                                </div>
+                            </div>
+
+                        </c:forEach>
+                    </div>
+                </c:forEach>
+            </c:when>
+            <c:otherwise>
+            </c:otherwise>
+        </c:choose>
+    </div>
+    </body>
+    </html>
+</jsp:root>
